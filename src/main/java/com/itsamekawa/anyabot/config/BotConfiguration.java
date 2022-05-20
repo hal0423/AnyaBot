@@ -9,12 +9,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 import java.util.List;
 
 @Configuration
+@PropertySource("classpath:applicationSECRET.yml")
 public class BotConfiguration {
     private static final Logger LOGGER = LoggerFactory.getLogger(BotConfiguration.class);
+
     @Value("${token}")
     private String token;
 
